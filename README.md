@@ -1,5 +1,5 @@
 # webgpt_repl
-Deploy [ChatGPT-Web](https://github.com/Chanzhaoyu/chatgpt-web) on Replit.
+## Deploy [ChatGPT-Web](https://github.com/Chanzhaoyu/chatgpt-web) on Replit.
 
 Template：Node.js
 
@@ -19,4 +19,10 @@ Finally，add variables：
 |API_REVERSE_PROXY|[Find in here](https://github.com/transitive-bullshit/chatgpt-api#reverse-proxy)|
 |AUTH_SECRET_KEY|Auth Key|
 
+Then, click the button "Run".
+## Deploy [BetterChatGPT](https://github.com/ztjhz/BetterChatGPT) on Replit.
+Template：Node.js
+```bash
+bash <(curl -s https://raw.githubusercontent.com/k0baya/webgpt_repl/main/BetterChatGPT/install.sh)
+```
 Then, click the button "Run".
