@@ -26,3 +26,39 @@ Template：Node.js
 bash <(curl -s https://raw.githubusercontent.com/k0baya/webgpt_repl/main/BetterChatGPT/install.sh)
 ```
 Then, click the button "Run".
+
+## Deploy [chatgpt-web](https://github.com/869413421/chatgpt-web) on Replit.
+Template:Bash
+
+First, add `pkgs.busybox` in *replit.nix*.
+
+Sencond, edit the *main.sh*：
+```bash
+repo="869413421/chatgpt-web"
+
+tag=$(curl -s "https://api.github.com/repos/$repo/releases/latest" | grep -o '"tag_name": ".*"' | sed 's/"tag_name": "//;s/"//')
+
+download_url="https://github.com/$repo/releases/download/$tag/chatgpt-web-${tag}-linux-amd64.tar.gz"
+
+rm -rf web
+
+wget "$download_url" -O chatgpt-web.tar.gz
+
+mkdir -p web
+
+tar -zxvf "chatgpt-web.tar.gz" -C web --overwrite
+
+rm -rf chatgpt-web.tar.gz
+
+chmod +x web/chatgpt-web
+
+if [ -f config.json ]; then
+    cp -f config.json web/config.json
+    cd web && ./chatgpt-web
+else
+    cp web/config.dev.json config.json
+    echo "Please modify your configuration in config.json!"
+    echo "请先在config.json文件中修改你的配置信息！"
+fi
+```
+Then, click the Run and follow the hints.
