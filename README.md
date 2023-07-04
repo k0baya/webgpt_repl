@@ -62,3 +62,9 @@ else
 fi
 ```
 Then, click the Run and follow the hints.
+## Deploy [Pandora]() on Replit.
+Template: Python
+```bash
+bash <(curl -s https://raw.githubusercontent.com/k0baya/webgpt_repl/main/pandora/install.sh)
+```
+Then click Run and enjoy~
